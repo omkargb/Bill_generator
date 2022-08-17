@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bill generator </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+    <link rel="stylesheet" href="assets/bootstrap.new.css">
+    <script src="assets/jquery.min.js"></script>
+    <script src="billscript.js"></script>
+</head>
+
+
+<body class="container-fluid bg-light">
+
+    <h3>
+        <center>Invoice</center>
+    </h3>
+    <hr>
+
+
+    <div>
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item h5"><a role="tab" data-toggle="tab" href="#tab-1" class="nav-link active"> Add entry</a>
+            </li>
+            <li class="nav-item h5"><a role="tab" data-toggle="tab" href="#tab-2" class="nav-link "
+                    onclick="nowdatetime(); idgen()">Modify entry</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade show active  bg-white p-4" id="tab-1">
+
+                <div class="employee-form card card-body ">
+                    <form onsubmit="event.preventDefault();onFormAddSubmit();sumamount();" autocomplete="off">
+                        <div class="form-row p-1">
+                            <div class="col-12 col-md-5 p-1"><label>Product type : </label>
+                                <input required class="form-control form-control-sm" list="plist" name="ptype" id="ptype">
+                                <datalist id="plist">
+                                    <option value="" selected>
+									<option value="LED Spotlight">
+									<option value="LED Bulbs">
+									<option value="LED Battens">
+									<option value="LED Strips">
+									<option value="LED Profile Patti">
+									<option value="LED Panels">
+									<option value="LED Downlights">
+									<option value="LED Surface Light">
+									<option value="LED GU10 or MR16">
+									<option value="LED Driver">
+									<option value="Commercial LED Lights">
+									<option value="Suspended LED Lights">
+									<option value="CFL">
+									<option value="Tubelights">
+									<option value="T-8 Fitting 4 Feet">
+									<option value="T-5 Fitting 4 Feet">
+									<option value="T-5 Fitting 2 Feet">
+									<option value="Flood Light">
+									<option value="Electronic Ballasts">
+									<option value="Transformer">
+									<option value="Ignitor">
+									<option value="HID Ballast">
+									<option value="Electromagnetic Ballasts">
+									<option value="Copper Ballasts">
+									<option value="Decorative Lights String">
+									<option value="Halogen Lamp">
+									<option value="Desk Lamp Light">
+									<option value="UV light">
+									<option value="Ceiling Fans">
+									<option value="Luxury Fans">
+									<option value="Wall Fans">
+									<option value="Table & Personal Fans">
+									<option value="Exhaust Fans">
+									<option value="Pedestal Fans">
+									<option value="Tower Fans">
+									<option value="BLDC Fans">
+									<option value="House Wire">
+									<option value="Single Core Wire">
+									<option value="2, 3, 4 & 6 Multicore Cable">
+									<option value="Speaker Wire">
+									<option value="Twin Twisted Wire">
+									<option value="Submersible Cable">
+									<option value="Coaxial Cable">
+									<option value="LAN cable">
+									<option value="Telephone Wire">
+									<option value="Shield Wire">
+									<option value="2 pin Socket">
+									<option value="2+3 pin Socket">
+									<option value="Combi Socket">
+									<option value="One-way switch">
+									<option value="Two-way switch">
+									<option value="Intermediate switch">
+									<option value="PVC Casing-Capping">
+									<option value="Fan Regulator & Dimmer">
+									<option value="RJ11 Sockets">
+									<option value="RJ45 Sockets">
+									<option value="Tv Sockets">
+									<option value="Motor Starter">
+									<option value="Buzzer">
+									<option value="Indicator">
+									<option value="Module Plate">
+									<option value="Surface Box">
+									<option value="Main switch/MCB">
+									<option value="MCB Distribution Box">
+									<option value="RCCB">
+									<option value="MCCB">
+									<option value="Plug Tops">
+									<option value="Socket outlet/plug">
+									<option value="Multiplug ">
+									<option value="Multiplug extension board">
+									<option value="Adaptor">
+									<option value="Converting Plugs">
+									<option value="Pendent Holder">
+									<option value="Angle Holder">
+									<option value="Batten Holder">
+									<option value="Ceiling Rose">
+									<option value="Converting Holder">
+									<option value="Halogen & HID Lamps Holder">
+									<option value="CFL Holder">
+									<option value="Tube Light Holder">
+									<option value="Power Strip">
+									<option value="Ding-Dong Bell">
+									<option value="Musical Bell">
+									<option value="Wireles Bell">
+									<option value="PVC clip">
+									<option value="Wire Clip">
+									<option value="Room Heater">
+									<option value="Geyser">
+									<option value="Dry Iron">
+									<option value="Steam Iron">
+									<option value="Hand Blender">
+									<option value="Mixer Grinder">
+									<option value="Juicer Mixer Grinder">
+									<option value="Changeover Switch">
+									<option value="Contactor">
+									<option value="Relay">
+									<option value="HRC Fuse">
+									<option value="Glass Fuse">
+									<option value="Capacitor">
+									<option value="Flexible Conduits">
+									<option value="Spanner">
+									<option value="Plier">
+									<option value="Screw Driver">
+									<option value="Tester">
+									<option value="Tool Kits">
+									<option value="Wrench">
+									<option value="Hammer">
+									<option value="Air Blower">
+									<option value="Drill Machine">
+									<option value="Insulation Tape">
+									<option value="Nut Bolts">
+									<option value="Brass Cup Washer">
+									<option value="Fastner">
+									<option value="Pvc Gitti/Wall Plug">
+									<option value="Screws">
+									<option value="Cable Tie">
+									<option value="Ferrule Ring/Cap">
+									<option value="Blade">
+									<option value="Drill Bits">
+									<option value="Pvc cable Clips">
+									<option value="Fan Down Rod">
+									<option value="Wire Nuts">
+									<option value="Thimble/Lugs ">
+									<option value="Cable Glands">
+									<option value="Multi Meter">
+									<option value="Earthing Accesories">
+									<option value="Electric Clamp">
+                                </datalist>
+                            </div>
+                            <div class="col-12 col-md-7 p-1"><label> Details : </label>
+                                <input required class="form-control form-control-sm" type="text" placeholder="Details"
+                                    name="pname" id="pname">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 p-1"><label> Rate : </label>
+                                <input required class="form-control form-control-sm" type="number" placeholder="Price"
+                                    name="pprice" id="pprice" min="0">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 p-1">
+                                <label> Quantity : </label>
+                                <input required class="form-control form-control-sm" type="number" name="pqty" id="pqty"
+                                    min="0" />
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 p-1">
+                                <label> Scale : </label>
+                                <select class="form-control form-control-sm" name="punit" id="punit">
+                                    <option value="" readonly>- Select - </option>
+                                    <option value="Units">Unit(s) </option>
+                                    <option value="mtr">mtr (मीटर)</option>
+                                    <option value="ft">ft (फीट)</option>
+                                    <option value="inch">inch (इंच)</option>
+                                    <option value="Kg">Kg (किलोग्रॅम)</option>
+                                    <option value="gm">gm (ग्रॅम)</option>
+                                </select>
+                            </div>
+                        </div>
+                </div>
+
+
+                <div class="text-center ">
+                    <hr>
+                    <input class="btn btn-sm btn-success" type="submit" value="Add entry" />
+                </div>
+                </form>
+            </div>
+
+
+            <!-- tab 2 -->
+            <div role="tabpanel" class="tab-pane fade bg-white p-3" id="tab-2">
+
+                <div class="">
+
+                    <div class="form-row">
+                        <div class="col-12 card card-body  m-1 p-4" id="editform">
+                            <form onsubmit="event.preventDefault();onFormEdit(); sumamount();" autocomplete="off">
+                                <div class="form-row">
+                                    <div class="col-12 col-md-5 p-1"><label> Product type : </label>
+                                        <input class="form-control form-control-sm" list="plistedit" name="ptype1"
+                                            id="ptype1" disabled>
+                                        <datalist id="plistedit">
+											<option value="" selected>
+											<option value="LED Spotlight">
+											<option value="LED Bulbs">
+											<option value="LED Battens">
+											<option value="LED Strips">
+											<option value="LED Profile Patti">
+											<option value="LED Panels">
+											<option value="LED Downlights">
+											<option value="LED Surface Light">
+											<option value="LED GU10 or MR16">
+											<option value="LED Driver">
+											<option value="Commercial LED Lights">
+											<option value="Suspended LED Lights">
+											<option value="CFL">
+											<option value="Tubelights">
+											<option value="T-8 Fitting 4 Feet">
+											<option value="T-5 Fitting 4 Feet">
+											<option value="T-5 Fitting 2 Feet">
+											<option value="Flood Light">
+											<option value="Electronic Ballasts">
+											<option value="Transformer">
+											<option value="Ignitor">
+											<option value="HID Ballast">
+											<option value="Electromagnetic Ballasts">
+											<option value="Copper Ballasts">
+											<option value="Decorative Lights String">
+											<option value="Halogen Lamp">
+											<option value="Desk Lamp Light">
+											<option value="UV light">
+											<option value="Ceiling Fans">
+											<option value="Luxury Fans">
+											<option value="Wall Fans">
+											<option value="Table & Personal Fans">
+											<option value="Exhaust Fans">
+											<option value="Pedestal Fans">
+											<option value="Tower Fans">
+											<option value="BLDC Fans">
+											<option value="House Wire">
+											<option value="Single Core Wire">
+											<option value="2, 3, 4 & 6 Multicore Cable">
+											<option value="Speaker Wire">
+											<option value="Twin Twisted Wire">
+											<option value="Submersible Cable">
+											<option value="Coaxial Cable">
+											<option value="LAN cable">
+											<option value="Telephone Wire">
+											<option value="Shield Wire">
+											<option value="2 pin Socket">
+											<option value="2+3 pin Socket">
+											<option value="Combi Socket">
+											<option value="One-way switch">
+											<option value="Two-way switch">
+											<option value="Intermediate switch">
+											<option value="PVC Casing-Capping">
+											<option value="Fan Regulator & Dimmer">
+											<option value="RJ11 Sockets">
+											<option value="RJ45 Sockets">
+											<option value="Tv Sockets">
+											<option value="Motor Starter">
+											<option value="Buzzer">
+											<option value="Indicator">
+											<option value="Module Plate">
+											<option value="Surface Box">
+											<option value="Main switch/MCB">
+											<option value="MCB Distribution Box">
+											<option value="RCCB">
+											<option value="MCCB">
+											<option value="Plug Tops">
+											<option value="Socket outlet/plug">
+											<option value="Multiplug ">
+											<option value="Multiplug extension board">
+											<option value="Adaptor">
+											<option value="Converting Plugs">
+											<option value="Pendent Holder">
+											<option value="Angle Holder">
+											<option value="Batten Holder">
+											<option value="Ceiling Rose">
+											<option value="Converting Holder">
+											<option value="Halogen & HID Lamps Holder">
+											<option value="CFL Holder">
+											<option value="Tube Light Holder">
+											<option value="Power Strip">
+											<option value="Ding-Dong Bell">
+											<option value="Musical Bell">
+											<option value="Wireles Bell">
+											<option value="PVC clip">
+											<option value="Wire Clip">
+											<option value="Room Heater">
+											<option value="Geyser">
+											<option value="Dry Iron">
+											<option value="Steam Iron">
+											<option value="Hand Blender">
+											<option value="Mixer Grinder">
+											<option value="Juicer Mixer Grinder">
+											<option value="Changeover Switch">
+											<option value="Contactor">
+											<option value="Relay">
+											<option value="HRC Fuse">
+											<option value="Glass Fuse">
+											<option value="Capacitor">
+											<option value="Flexible Conduits">
+											<option value="Spanner">
+											<option value="Plier">
+											<option value="Screw Driver">
+											<option value="Tester">
+											<option value="Tool Kits">
+											<option value="Wrench">
+											<option value="Hammer">
+											<option value="Air Blower">
+											<option value="Drill Machine">
+											<option value="Insulation Tape">
+											<option value="Nut Bolts">
+											<option value="Brass Cup Washer">
+											<option value="Fastner">
+											<option value="Pvc Gitti/Wall Plug">
+											<option value="Screws">
+											<option value="Cable Tie">
+											<option value="Ferrule Ring/Cap">
+											<option value="Blade">
+											<option value="Drill Bits">
+											<option value="Pvc cable Clips">
+											<option value="Fan Down Rod">
+											<option value="Wire Nuts">
+											<option value="Thimble/Lugs ">
+											<option value="Cable Glands">
+											<option value="Multi Meter">
+											<option value="Earthing Accesories">
+											<option value="Electric Clamp">
+                                        </datalist>
+                                    </div>
+                                    <div class="col-12 col-md-7 p-1"><label> Details : </label>
+                                        <input required class="form-control form-control-sm" type="text"
+                                            placeholder="Product Details" name="pname" id="pname1" disabled />
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4  p-1"><label> Rate : </label>
+                                        <input required class="form-control form-control-sm" type="number"
+                                            placeholder="Product Price" name="pprice" id="pprice1" min="0" disabled />
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4  p-1">
+                                        <label> Quantity : </label>
+                                        <input required class="form-control form-control-sm" type="number" name="pqty"
+                                            id="pqty1" min="0" disabled/>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-4  p-1">
+                                        <label> Scale : </label>
+                                        <select class="form-control form-control-sm" name="punit" id="punit1" >
+                                            <option value="" readonly>- Select - </option>
+                                            <option value="Units">Unit(s) </option>
+                                            <option value="mtr">mtr (मीटर)</option>
+                                            <option value="ft">ft (फीट)</option>
+                                            <option value="inch">inch (इंच)</option>
+                                            <option value="Kg">Kg (किलोग्रॅम)</option>
+                                            <option value="gm">gm (ग्रॅम)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="text-center ">
+                                    <input class="btn btn-sm btn-success" type="submit" onclick="sumamount();" value="Update entry" disabled/>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="card card-body m-1 p-2">
+						<h5 class="text-danger"> Customer details </h5>
+                            <form  onsubmit="event.preventDefault();" class="form-row  p-2">
+                                <div class="col-12 col-md-6 p-1"><label> Customer Name : </label>
+                                    <input required class="form-control form-control-sm" type="text" placeholder="Name"
+                                        name="custname" id="custname" pattern="[A-Za-z .]{2,}">
+                                </div>
+                                <div class="col-12 col-md-6 p-1"><label> Customer contact No. : </label>
+                                    <input class="form-control form-control-sm" type="number" min="0" max="9999999999"
+                                        placeholder="contact number" name="custcontact" id="custcontact"
+                                        pattern="[0-9]{}">
+                                </div>
+                                <div class="col-12 p-1"><label> Customer address : </label>
+                                    <input class="form-control form-control-sm" type="text"
+                                        placeholder="address or location" name="custadr" id="custadr" >
+                                </div>
+                                <div class="col-12 text-center"><hr>
+                                    <button class="btn btn-sm btn-primary" onclick="setcustdetails(); sumamount();"> Set Customer details </button>
+                                </div>
+                            </form>
+                        </div>
+						
+                        <div class="form-row card card-body m-1 p-2">
+						<h5 class="text-danger"> Edit entries or Print Invoice </h5>
+						<div class="col-12 " style="max-height: 90%;" id="printcontent">
+                            <center>
+                                <!-- <h5>Shirke Electricals & Electronics </h5>
+                                <i>D.V.D., D.T.H., Fan, Music System, Mixer, Iron, House fitting
+                                    material Sales and Repair </i> -->
+								<img src="assets/banner1.png" style="max-width: 90%; height: auto;">
+                            </center>
+                            <hr>
+                            <center>• Invoice •</center>
+                            <span class="ml-4 text-left"> Bill No. : ____________<span id="curid" class="d-none"> </span>
+                                <span class="mr-4 float-right "> Date : <span id="curdate"> </span></span>
+                            </span>
+
+                            <hr>
+                            <div class="row text-justify">
+                                <div class="col-6 ml-4">
+                                    <h6>From : Shirke Electricals & Electronics</h6>
+                                    <div>Address :  Opposite Hotel Shakini, Chinchnaka, Chiplun, Ratnagiri.</div>
+                                    <div>Contact : 9850708543</div>
+                                </div>
+
+                                <div class="col-5">
+                                    <h6>To : <span id="cust_name"> Customer name </span></h6>
+                                    <div>Address : <span id="cust_adr"></span></div>
+                                    <div>Contact : <span id="cust_contact"> </span></div>
+                                </div>
+                            </div>
+                            <hr>
+                            <table class="table table-sm" id="billdata">
+                                <thead>
+                                    <tr>
+                                        <th>Product Type</th>
+                                        <th>Details</th>
+                                        <th>Rate</th>
+                                        <th colspan="2">Quantity</th>
+                                        <!-- <th>Unit</th> -->
+                                        <th class="text-right">Amount</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="overflow-y:scroll;">
+                                </tbody>
+                            </table>
+                            <div class="container text-right "> Total : Rs. <span class="h5 pr-4" id="totalamount"></span></div>
+                            <hr>
+                            <br>
+                            <br>
+                            <div class="p-2"> <span class="float-right"> Sign and stamp </span></div>
+                        </div>
+						</div>
+                    </div>
+
+                    <center>
+                        <button class="btn btn-info" onclick="PrintDiv(); sumamount();"> Print </button>
+                    </center>
+
+                </div>
+                <hr>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <br />
+    <script src="assets/bootstrap.min.js"></script>
+    <script>
+        function nowdatetime() {
+            /* var options = { weekday: 'long',  day: 'numeric', month: 'long', year: 'numeric',  };
+            var today  = new Date();
+            var dateshow= today.toLocaleDateString("en-IN", options);
+            console.log(dateshow);*/
+
+            var today = new Date();
+            var datetime = today.toLocaleString([], {
+                dateStyle: 'medium',
+                timeStyle: 'short'
+            });
+            console.log(datetime);
+            document.getElementById('curdate').innerHTML = datetime;
+        }
+
+        function idgen() {
+            var date = new Date();
+            var id = ("00" + date.getDate()).slice(-2) + ("00" + (date.getMonth() + 1)).slice(-2) + date.getFullYear() +
+                ("00" + date.getHours()).slice(-2) + ("00" + date.getMinutes()).slice(-2);
+
+            console.log(id);
+            document.getElementById('curid').innerHTML = id;
+        }
+
+        function setcustdetails()
+        {
+            var custname= document.getElementById('custname').value ;
+            var custadr= document.getElementById('custadr').value ;
+            var custcontact= document.getElementById('custcontact').value;
+            
+            document.getElementById('cust_name').innerHTML =  custname;
+			
+			if(!custcontact) 
+			{ document.getElementById("cust_contact").innerHTML = "--"; } 
+			else	{ document.getElementById("cust_contact").innerHTML = custcontact; }
+			
+			if(!custadr) 
+			{ document.getElementById("cust_adr").innerHTML =  "--"; } 
+			else	{ document.getElementById("cust_adr").innerHTML =  custadr; }
+        }
+
+        function sumamount() {
+            var table = document.getElementById("billdata"), sumVal = 0;
+            for(var i = 1; i < table.rows.length; i++)
+            {
+                sumVal = sumVal + parseInt(table.rows[i].cells[5].innerHTML);
+                console.log("sumval inside = "+sumVal);
+            }
+            console.log("sumval outside = "+sumVal);
+            document.getElementById("totalamount").innerHTML =  sumVal;
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        function PrintDiv() {
+            //Get the HTML of div
+            var divElements = document.getElementById('printcontent').innerHTML;
+            var printWindow = window.open("", "_blank", "");
+            //open the window
+            printWindow.document.open();
+            //write the html to the new window, link to css file
+            printWindow.document.write(
+                '<html><head><title> Print invoice </title><link rel="stylesheet" type="text/css" href="assets/bootstrap.new.css" >'
+                );
+            printWindow.document.write(
+                '<style> @media print{ #billdata th:last-child { display: none; } #billdata td:last-child { display: none; }} </style> </head><body class="container">'
+                );
+            printWindow.document.write(divElements);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.focus();
+            //The Timeout is ONLY to make Safari work, but it still works with FF, IE & Chrome.
+            setTimeout(function () {
+                printWindow.print();
+            }, 100);
+        }
+    </script>
+
+</body>
+
+
+</html>
