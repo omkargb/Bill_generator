@@ -1,1 +1,1 @@
-## Bill Generator
+## Bill/Invoice Generator
