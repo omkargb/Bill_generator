@@ -9,11 +9,15 @@
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="assets/bootstrap.mod.css">
     <script src="assets/jquery.min.js"></script>
-    <script src="billscript.js"></script>
+	<script src="billscript.js"></script>
+
+<style>	
+</style>
+
 </head>
 
 
-<body class="container-fluid bg-light">
+<body class="container-fluid" style="background-color: ghostwhite">
 
     <h3>
         <center>Invoice Generator</center>
@@ -167,11 +171,11 @@
 									<option value="Electric Clamp">
                                 </datalist>
                             </div>
-                            <div class="col-12 col-md-7 p-1"><label> Details : </label>
-                                <input required class="form-control form-control-sm" type="text" placeholder="Details"
+                            <div class="col-12 col-md-7 p-1"><label> Details : <small>Brand Name, ModelName or Number, color etc.</small></label>
+                                <input required class="form-control form-control-sm text-capitalize" type="text" placeholder="Details"
                                     name="pname" id="pname">
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4 p-1"><label> Rate : </label>
+                            <div class="col-12 col-md-6 col-lg-4 p-1"><label> Rate (Rs.) : </label>
                                 <input required class="form-control form-control-sm" type="number" placeholder="Price"
                                     name="pprice" id="pprice" min="0">
                             </div>
@@ -188,8 +192,6 @@
                                     <option value="mtr">mtr (मीटर)</option>
                                     <option value="ft">ft (फीट)</option>
                                     <option value="inch">inch (इंच)</option>
-                                    <option value="Kg">Kg (किलोग्रॅम)</option>
-                                    <option value="gm">gm (ग्रॅम)</option>
                                 </select>
                             </div>
                         </div>
@@ -347,11 +349,11 @@
 											<option value="Electric Clamp">
                                         </datalist>
                                     </div>
-                                    <div class="col-12 col-md-7 p-1"><label> Details : </label>
+                                    <div class="col-12 col-md-7 p-1"><label> Details : <small>Brand Name, ModelName or Number, color etc.</small></label>
                                         <input required class="form-control form-control-sm" type="text"
                                             placeholder="Product Details" name="pname" id="pname1" disabled />
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-4  p-1"><label> Rate : </label>
+                                    <div class="col-12 col-md-6 col-lg-4  p-1"><label> Rate (Rs.) : </label>
                                         <input required class="form-control form-control-sm" type="number"
                                             placeholder="Product Price" name="pprice" id="pprice1" min="0" disabled />
                                     </div>
@@ -368,8 +370,6 @@
                                             <option value="mtr">mtr (मीटर)</option>
                                             <option value="ft">ft (फीट)</option>
                                             <option value="inch">inch (इंच)</option>
-                                            <option value="Kg">Kg (किलोग्रॅम)</option>
-                                            <option value="gm">gm (ग्रॅम)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -389,12 +389,12 @@
                                 </div>
                                 <div class="col-12 col-md-6 p-1"><label> Customer contact No. : </label>
                                     <input class="form-control form-control-sm" type="number" min="0" max="9999999999"
-                                        placeholder="contact number" name="custcontact" id="custcontact"
-                                        pattern="[0-9]{}">
+                                        placeholder="Contact number" name="custcontact" id="custcontact"
+                                        pattern="[0-9]{10}">
                                 </div>
                                 <div class="col-12 p-1"><label> Customer address : </label>
                                     <input class="form-control form-control-sm" type="text"
-                                        placeholder="address or location" name="custadr" id="custadr" >
+                                        placeholder="Address or location" name="custadr" id="custadr" >
                                 </div>
                                 <div class="col-12 text-center"><hr>
                                     <button class="btn btn-sm btn-primary" onclick="setcustdetails(); sumamount();"> Set Customer details </button>
@@ -405,14 +405,14 @@
                         <div class="form-row card card-body m-1 p-2">
 						<h5 class="text-danger p-2"> Edit entries or Print Invoice <hr/> </h5>
 						<div class="card mw-100" style="max-height: 90%;" id="printcontent">
-                            <center>
+                            <center class="pt-1">
                                 <!-- <h5>Shirke Electricals & Electronics </h5>
                                 <i>D.V.D., D.T.H., Fan, Music System, Mixer, Iron, House fitting
                                     material Sales and Repair </i> -->
 								<img src="assets/banner1.png" style="max-width: 90%; height: auto;">
                             </center>
                             <hr>
-                            <center>• Invoice •</center>
+                            <center><h6>• Invoice •</h6></center>
                             <span class="ml-4 text-left"> Bill No. : ____________<span id="curid" class="d-none"> </span>
                                 <span class="mr-4 float-right "> Date : <span id="curdate"> </span></span>
                             </span>
@@ -426,22 +426,22 @@
                                 </div>
 
                                 <div class="col-5">
-                                    <h6>To : <span id="cust_name"> Customer name </span></h6>
+                                    <h6>To : <span id="cust_name"> -- </span></h6>
                                     <div>Address : <span id="cust_adr"></span></div>
                                     <div>Contact : <span id="cust_contact"> </span></div>
                                 </div>
                             </div>
                             <hr>
-							<div class="table-responsive  text-capitalize">
+							<div class="table-responsive  text-capitalize p-1">
                             <table class="table table-bordered table-hover table-sm" id="billdata">
                                 <thead>
-                                    <tr>
+                                    <tr >
                                         <th>Product Type</th>
                                         <th>Details</th>
-                                        <th>Rate</th>
+                                        <th>Rate (Rs.)</th>
                                         <th colspan="2">Quantity</th>
                                         <!-- <th>Unit</th> -->
-                                        <th class="text-right">Amount</th>
+                                        <th class="text-right">Amount (Rs.) </th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -449,7 +449,7 @@
                                 </tbody>
                             </table>
 							</div>
-                            <div class="container text-right "> Total : Rs. <span class="h5 pr-4" id="totalamount"></span></div>
+                            <div class="container text-right "> Total : Rs. <span class="h5 pr-3" id="totalamount"></span></div>
                             <hr>
                             <br>
                             <br>
@@ -459,7 +459,7 @@
                     </div>
 
                     <center>
-                        <button class="btn btn-info" onclick="PrintDiv(); sumamount();"> Print </button>
+                        <button class="btn btn-info" onclick="PrintDiv(); sumamount();"> Print / Save as PDF</button>
                     </center>
 
                 </div>
