@@ -33,12 +33,11 @@
                     onclick="nowdatetime(); idgen()">Modify entry</a></li>
         </ul>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade show active  bg-white p-4" id="tab-1">
+            <div role="tabpanel" class="tab-pane fade show active  bg-white p-2" id="tab-1">
 
-                <div class="employee-form card card-body ">
                     <form onsubmit="event.preventDefault();onFormAddSubmit();sumamount();" autocomplete="off">
-                        <div class="form-row p-1">
-                            <div class="col-12 col-md-5 p-1"><label>Product type : </label>
+                        <div class="form-row">
+                            <div class="col-12 col-md-5 p-2"><label>Product type : </label>
                                 <input required class="form-control form-control-sm" list="plist" name="ptype" id="ptype">
                                 <datalist id="plist">
                                     <option value="" selected>
@@ -171,22 +170,19 @@
 									<option value="Electric Clamp">
                                 </datalist>
                             </div>
-                            <div class="col-12 col-md-7 p-1"><label> Details : <small>Brand Name, ModelName or Number, color etc.</small></label>
+                            <div class="col-12 col-md-7 p-2"><label> Details : <small>Brand Name, ModelName or Number, color etc.</small></label>
                                 <input required class="form-control form-control-sm text-capitalize" type="text" placeholder="Details"
                                     name="pname" id="pname">
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4 p-1"><label> Rate (Rs.) : </label>
-                                <input required class="form-control form-control-sm" type="number" placeholder="Price"
-                                    name="pprice" id="pprice" min="0">
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 p-1">
+
+                            <div class="col-12 col-md-6 col-lg-4 p-2">
                                 <label> Quantity : </label>
                                 <input required class="form-control form-control-sm" type="number" name="pqty" id="pqty"
                                     min="0" />
                             </div>
-                            <div class="col-12 col-md-6 col-lg-4 p-1">
+                            <div class="col-12 col-md-6 col-lg-4 p-2">
                                 <label> Scale : </label>
-                                <select class="form-control form-control-sm" name="punit" id="punit">
+                                <select class="form-control form-control-sm" name="punit" id="punit" required>
                                     <option value="" readonly>- Select - </option>
                                     <option value="Units">Unit(s) </option>
                                     <option value="mtr">mtr (मीटर)</option>
@@ -194,13 +190,16 @@
                                     <option value="inch">inch (इंच)</option>
                                 </select>
                             </div>
+                            <div class="col-12 col-md-6 col-lg-4 p-2"><label> Rate (Rs.) : </label>
+                                <input required class="form-control form-control-sm" type="number" placeholder="Price"
+                                    name="pprice" id="pprice" min="0">
+                            </div>							
                         </div>
-                </div>
 
 
                 <div class="text-center ">
                     <hr>
-                    <input class="btn btn-sm btn-success" type="submit" value="Add entry" />
+                    <input class="btn  btn-success" type="submit" value="Add entry" />
                 </div>
                 </form>
             </div>
@@ -212,10 +211,10 @@
                 <div class="">
 
                     <div class="form-row">
-                        <div class="col-12 card card-body  m-1 p-4" id="editform">
+                        <div class="col-12 card card-body  m-1 p-2" id="editform">
                             <form onsubmit="event.preventDefault();onFormEdit(); sumamount();" autocomplete="off">
                                 <div class="form-row">
-                                    <div class="col-12 col-md-5 p-1"><label> Product type : </label>
+                                    <div class="col-12 col-md-5 p-2"><label> Product type : </label>
                                         <input class="form-control form-control-sm" list="plistedit" name="ptype1"
                                             id="ptype1" disabled>
                                         <datalist id="plistedit">
@@ -349,22 +348,18 @@
 											<option value="Electric Clamp">
                                         </datalist>
                                     </div>
-                                    <div class="col-12 col-md-7 p-1"><label> Details : <small>Brand Name, ModelName or Number, color etc.</small></label>
+                                    <div class="col-12 col-md-7 p-2"><label> Details : <small>Brand Name, ModelName or Number, color etc.</small></label>
                                         <input required class="form-control form-control-sm" type="text"
                                             placeholder="Product Details" name="pname" id="pname1" disabled />
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-4  p-1"><label> Rate (Rs.) : </label>
-                                        <input required class="form-control form-control-sm" type="number"
-                                            placeholder="Product Price" name="pprice" id="pprice1" min="0" disabled />
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4  p-1">
+                                    <div class="col-12 col-md-6 col-lg-4  p-2">
                                         <label> Quantity : </label>
                                         <input required class="form-control form-control-sm" type="number" name="pqty"
                                             id="pqty1" min="0" disabled/>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-4  p-1">
+                                    <div class="col-12 col-md-6 col-lg-4  p-2">
                                         <label> Scale : </label>
-                                        <select class="form-control form-control-sm" name="punit" id="punit1" >
+                                        <select class="form-control form-control-sm" name="punit" id="punit1" required>
                                             <option value="" readonly>- Select - </option>
                                             <option value="Units">Unit(s) </option>
                                             <option value="mtr">mtr (मीटर)</option>
@@ -372,10 +367,14 @@
                                             <option value="inch">inch (इंच)</option>
                                         </select>
                                     </div>
+                                    <div class="col-12 col-md-6 col-lg-4  p-2"><label> Rate (Rs.) : </label>
+                                        <input required class="form-control form-control-sm" type="number"
+                                            placeholder="Product Price" name="pprice" id="pprice1" min="0" disabled />
+                                    </div>									
                                 </div>
                                 <hr>
                                 <div class="text-center ">
-                                    <input class="btn btn-sm btn-success" type="submit" onclick="sumamount();" value="Update entry" disabled/>
+                                    <input class="btn  btn-success" type="submit" onclick="sumamount();" value="Update entry" disabled/>
                                 </div>
                             </form>
                         </div>
@@ -383,21 +382,21 @@
                         <div class="card card-body m-1 p-2">
 						<h5 class="text-danger p-2"> Customer details </h5>
                             <form  onsubmit="event.preventDefault();" class="form-row  p-2">
-                                <div class="col-12 col-md-6 p-1"><label> Customer Name : </label>
+                                <div class="col-12 col-md-6 p-2"><label> Customer Name : </label>
                                     <input required class="form-control form-control-sm" type="text" placeholder="Name"
                                         name="custname" id="custname" pattern="[A-Za-z .]{2,}">
                                 </div>
-                                <div class="col-12 col-md-6 p-1"><label> Customer contact No. : </label>
+                                <div class="col-12 col-md-6 p-2"><label> Customer contact No. : </label>
                                     <input class="form-control form-control-sm" type="number" min="0" max="9999999999"
                                         placeholder="Contact number" name="custcontact" id="custcontact"
                                         pattern="[0-9]{10}">
                                 </div>
-                                <div class="col-12 p-1"><label> Customer address : </label>
+                                <div class="col-12 p-2"><label> Customer address : </label>
                                     <input class="form-control form-control-sm" type="text"
                                         placeholder="Address or location" name="custadr" id="custadr" >
                                 </div>
                                 <div class="col-12 text-center"><hr>
-                                    <button class="btn btn-sm btn-primary" onclick="setcustdetails(); sumamount();"> Set Customer details </button>
+                                    <button class="btn  btn-primary" onclick="setcustdetails(); sumamount();"> Set Customer details </button>
                                 </div>
                             </form>
                         </div>
@@ -432,7 +431,7 @@
                                 </div>
                             </div>
                             <hr>
-							<div class="table-responsive  text-capitalize p-1">
+							<div class="table-responsive  text-capitalize p-2">
                             <table class="table table-bordered table-hover table-sm" id="billdata">
                                 <thead>
                                     <tr >
