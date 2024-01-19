@@ -395,6 +395,18 @@
                                     <input class="form-control form-control-sm" type="text"
                                         placeholder="Address or location" name="custadr" id="custadr" >
                                 </div>
+				    <hr>
+				 <div class="col-12 p-2"><label> Bill no : </label>
+                                    <input class="form-control form-control-sm" type="text"
+                                        placeholder="bill number" name="bilno" id="bilno" >
+				 </div>
+				    
+				  <div class="col-12 p-2"><label> Bill date : </label>
+                                    <input class="form-control form-control-sm" type="date"
+                                        placeholder="" name="bildt" id="bildt" >
+                                </div>  
+
+				    
                                 <div class="col-12 text-center"><hr>
                                     <button class="btn  btn-primary" onclick="setcustdetails(); sumamount();"> Set Customer details </button>
                                 </div>
@@ -412,8 +424,8 @@
                             </center>
                             <hr>
                             <center><h6>• Invoice •</h6></center>
-                            <span class="ml-4 text-left"> Bill No. : ____________<span id="curid" class="d-none"> </span>
-                                <span class="mr-4 float-right "> Date : <span id="curdate"> </span></span>
+                            <span class="ml-4 text-left"> Bill No. : <span id="billnumber"> <span id="curid" class="d-none"> </span>
+                                <span class="mr-4 float-right "> Date : <span id="billdate"> </span></span>
                             </span>
 
                             <hr>
@@ -502,7 +514,10 @@
             var custname= document.getElementById('custname').value ;
             var custadr= document.getElementById('custadr').value ;
             var custcontact= document.getElementById('custcontact').value;
-            
+
+		var billdte= document.getElementById('bildt').value;
+		var billnum= document.getElementById('bilno').value;
+
             document.getElementById('cust_name').innerHTML =  custname;
 			
 			if(!custcontact) 
@@ -512,6 +527,10 @@
 			if(!custadr) 
 			{ document.getElementById("cust_adr").innerHTML =  "--"; } 
 			else	{ document.getElementById("cust_adr").innerHTML =  custadr; }
+
+document.getElementById("billnumber").innerHTML = billnum;
+document.getElementById("billdate").innerHTML = billdte;
+
         }
 
         function sumamount() {
